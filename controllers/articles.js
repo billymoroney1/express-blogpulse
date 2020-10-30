@@ -28,6 +28,21 @@ router.get('/new', (req, res) => {
   })
 })
 
+// GET edit page
+router.get('/edit/:id', (req, res) => {
+  db.article.findOne({
+    where: {id: req.params.id}
+  })
+  .then((article) => {
+    res.render(`articles/edit`, {article: article})
+  })
+})
+
+// TAKE CONTENTS OF EDIT FORM AND UPDATE POST, REDIRECT TO ARTICLE
+router.post('articles/edit', (req, res) => {
+
+})
+
 // GET /articles/:id - display a specific post and its author
 router.get('/:id', (req, res) => {
   db.article.findOne({

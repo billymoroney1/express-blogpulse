@@ -1,2 +1,7 @@
-          <small>by <%= a.author.getFullName() %></small>
-removed this code from the index paige? i have two articles without authors? how? how remove?
+TO EDIT ARTICLES:
+HOW DO I DO PUT ROUTE FOR UPDATING ARTICLE
+add an edit button to the articles/show page
+create a new get route and view for an edit article page
+edit or create new post route 
+
+BOOTSTRAP MODAL TO HAVE FORM APPEAR FOR CREATING NEW AUTHOR

@@ -13,6 +13,7 @@
           <a href="/articles/<%= a.id %>"><%= a.title %></a>
         </h2>
         <p>
+          <small>by <%= a.author.getFullName() %></small><br>
           <strong><%= moment(a.createdAt).calendar() %></strong>
         </p>
       </div>

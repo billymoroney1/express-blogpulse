@@ -1,0 +1,19 @@
+<h1>Edit Post</h1>
+
+<% console.log(article) %>
+<% console.log(article.content) %>
+
+<form action="articles/edit" method="POST">
+
+    <div class="form-group">
+        <label for="title">Title</label>
+        <textarea type="text" class="form-control" id="title" name="title" required><%=article.title%></textarea>
+      </div>
+    
+      <div class="form-group">
+        <label for="content">Content</label>
+        <textarea type="text" class="form-control" id="content" name="content" required><%=article.content%></textarea>
+      </div>
+
+      <input type="submit" class="btn btn-primary">
+</form>
