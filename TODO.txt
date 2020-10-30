@@ -1,0 +1,2 @@
+          <small>by <%= a.author.getFullName() %></small>
+removed this code from the index paige? i have two articles without authors? how? how remove?

@@ -1,3 +1,4 @@
+require('dotenv').config()
 let express = require('express')
 let ejsLayouts = require('express-ejs-layouts')
 let db = require('./models')
@@ -19,6 +20,8 @@ app.use((req, res, next) => {
 // bring in authors and articles controllers
 app.use('/authors', require('./controllers/authors'))
 app.use('/articles', require('./controllers/articles'))
+// app.use('/comments', require('./controllers/comments'))
+
 
 // GET / - display all articles and their authors
 app.get('/', (req, res) => {
@@ -29,6 +32,22 @@ app.get('/', (req, res) => {
   }).catch((error) => {
     console.log(error)
     res.status(400).render('main/404')
+  })
+})
+
+// POST create new comment
+
+app.post('/comment', (req, res) => {
+  db.comment.create({
+      name: req.body.name,
+      content: req.body.content,
+      articleId: req.body.articleId
+  })
+  .then(comment => {
+      res.redirect(`articles/${req.body.articleId}`)
+  })
+  .catch(err => {
+      console.log(err)
   })
 })
 
